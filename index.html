@@ -205,6 +205,9 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             padding: 1.5rem;
             transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-card:hover {
@@ -221,6 +224,7 @@
             font-size: 0.85rem;
             margin-bottom: 1rem;
             font-weight: 700;
+            align-self: flex-start;
         }
 
         .project-card h3 {
@@ -231,7 +235,90 @@
 
         .project-card p {
             color: var(--text-muted);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: color 0.3s, gap 0.3s;
+        }
+
+        .btn-card:hover {
+            color: #fff;
+            gap: 12px;
+        }
+
+        /* Sobre Mí Section */
+        .about-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-card p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .skill-tag {
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid var(--border-glow);
+            color: var(--accent-blue);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem 2.5rem;
+            text-decoration: none;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .contact-item i {
+            color: var(--accent-blue);
+            font-size: 1.5rem;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
         }
 
         /* Footer */
@@ -257,7 +344,8 @@
         <nav>
             <ul>
                 <li><a href="#proyectos">Juegos</a></li>
-                <li><a href="#novedades">Novedades</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -275,21 +363,56 @@
         <h2 class="section-title">NUESTROS JUEGOS</h2>
         
         <div class="projects-grid">
-            <!-- Project Card 1 -->
+            <!-- Project Card 1: Gacha RPG (Con enlace al devlog) -->
             <div class="project-card">
-                <span class="project-badge">EN DESARROLLO V2.0</span>
-                <h3>Gacha RPG Project</h3>
-                <p>Un juego táctico con sistema de invocación de personajes, tienda, inventario y combates rediseñados desde cero.</p>
+                <div>
+                    <span class="project-badge">EN DESARROLLO V2.0</span>
+                    <h3>Gacha RPG Project</h3>
+                    <p>Un juego táctico con sistema de invocación de personajes, tienda, inventario y combates rediseñados desde cero.</p>
+                </div>
+                <a href="gacha-devlog.html" class="btn-card">
+                    Ver Progreso e Info <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
 
             <!-- Project Card 2 -->
             <div class="project-card">
-                <span class="project-badge">PRÓXIMAMENTE</span>
-                <h3>Nuevo Proyecto Indie</h3>
-                <p>Nuevas ideas y prototipos en los que Antonix Games está trabajando actualmente.</p>
+                <div>
+                    <span class="project-badge">PRÓXIMAMENTE</span>
+                    <h3>Más juegos Próximamente</h3>
+                    <p>Nuevas ideas y prototipos en los que Antonix Games está trabajando actualmente.</p>
+                </div>
             </div>
         </div>
     </main>
+
+    <!-- Sobre Mí Section -->
+    <section class="container" id="sobre-mi">
+        <h2 class="section-title">SOBRE MÍ</h2>
+        <div class="about-card">
+            <p>¡Hola! Me llamo <strong>Antonix</strong> y mi gran pasión es el desarrollo de videojuegos y la programación. Empecé creando prototipos interactivos en JavaScript y HTML5 para aprender sobre lógica de combate, inventarios y sistemas Gacha.</p>
+            <p>Actualmente me encuentro trabajando en la versión 2.0 de mi juego principal, puliendo cada aspecto técnico para ofrecer una experiencia sólida y entretenida.</p>
+            <div class="skills-tags">
+                <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
+                <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                <span class="skill-tag"><i class="fa-brands fa-github"></i> GitHub</span>
+                <span class="skill-tag"><i class="fa-solid fa-gamepad"></i> Game Design</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section class="container" id="contacto">
+        <h2 class="section-title">CONTACTO</h2>
+        <div class="contact-grid">
+            <a href="https://github.com" target="_blank" class="contact-item">
+                <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="mailto:tu-email@ejemplo.com" class="contact-item">
+                <i class="fa-solid fa-envelope"></i> Correo Electrónico
+            </a>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2026 Antonix Games. Todos los derechos reservados.</p>
